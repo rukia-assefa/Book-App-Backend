@@ -1,4 +1,3 @@
-//We will define the structure of our data
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(

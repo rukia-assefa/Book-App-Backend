@@ -41,5 +41,5 @@ const BookSchema = new mongoose.Schema({
           updatedAt: "updated_at",
         },
       });
- module.exports = mongoose.model("Book", BookSchema); // Changed the model name to "Book"
+ module.exports = mongoose.model("Book", BookSchema); 
 
