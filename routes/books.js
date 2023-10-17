@@ -1,9 +1,6 @@
-// const express = require('express');
 const router = require("express").Router()
-// const router = express.Router(); // Create a router instance
 const Book = require('../models/books');
 
-// Create an employee(the employeeRouter is the code below)
 router.post('/book', async (req, res) => {
   
     const newBook = new Book({
@@ -17,7 +14,6 @@ router.post('/book', async (req, res) => {
       description:req.body.description,
     });
 
-    // Save the employee data in the database
   try{
     const savedBook = await newBook.save();
 
@@ -33,7 +29,7 @@ router.get('/books', async (req, res) => {
     try {
       const allBooks = await Book.find({});
       res.status(200).json(allBooks);
-    } catch (err) { // Added (err) here
+    } catch (err) { 
       res.status(500).json(err);
     }
   });
@@ -58,16 +54,6 @@ router.get('/books', async (req, res) => {
     }
   })
 
-
-  // router.get("/search/:title",async (req, res) => {
-  //   try{
-  //     const allBooks = await Book.find({title: req.params.title });
-  //     res.status(200).json(allBooks);
-
-  //   }catch (err) { 
-  //     res.status(500).json(err);
-  //   }
-  // });
   router.get("/search/:title", async (req, res) => {
     try {
       const regex = new RegExp(req.params.title, "i");
