@@ -7,9 +7,9 @@ require("dotenv").config();
 const userRouter = require("./routes/user");
 
 
-const PORT = process.env.PORT || 3000; 
-app.listen(PORT, () => {
-  console.log(`Server is running in localhost:${PORT}`);
+// const PORT = process.env.PORT || 3000; 
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is running in localhost:3000`);
 });
 
 
